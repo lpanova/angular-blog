@@ -1,0 +1,29 @@
+<p class="text-center text-uppercase fs-5" style="color: #cac7c7;">Other recipe</p>
+<div class="container d-flex justify-content-center flex-wrap">
+  <div *ngFor="let post of posts">
+    <a routerLink="/detail/{{ post.id }}" class="text-decoration-none m-1">
+      <div class="card mx-1" style="width: 18rem">
+        <img src="{{ post.img }}" alt="{{ post.name }}" class="img-fluid" />
+        <div class="card-body" style="height: 300px">
+          <span
+            class="badge rounded-pill text-bg-primary"
+            [ngClass]="post.titleClass"
+            >{{ post.label }}</span
+          >
+          <h5 class="card-title text-dark">{{ post.name }}</h5>
+          <p class="card-title" style="color: #2196f3; font-size: 13px">
+            {{ post.additionallyname }}
+          </p>
+          <p
+            class="card-text text-dark fw-light text-wrap text-break overflow-wrap"
+            style="display: inline-block; height: 400px; font-size: 13px"
+          >
+            {{ post.description }}
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+

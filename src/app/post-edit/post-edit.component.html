@@ -1,0 +1,88 @@
+<div class="text-center text-uppercase fs-5">Post Edit</div>
+<div *ngIf="post" class="container">
+  <form (ngSubmit)="onSubmit()" #postForm="ngForm">
+    <div>
+      <label>Name</label>
+      <input
+        type="text"
+        id="name"
+        [(ngModel)]="post.name"
+        placeholder="name"
+        name="name"
+        #name="ngModel"
+        class="form-control mb-3"
+      />
+    </div>
+
+    <div>
+      <label>Additionally Name</label>
+      <input
+        type="text"
+        id="additionallyname"
+        [(ngModel)]="post.additionallyname"
+        placeholder="additionallyname"
+        name="additionallyname"
+        #name="ngModel"
+        class="form-control mb-3"
+      />
+    </div>
+
+    <div>
+      <label>Image</label>
+      <input
+        type="text"
+        id="image"
+        [(ngModel)]="post.img"
+        placeholder="image"
+        name="image"
+        #name="ngModel"
+        class="form-control mb-3"
+      />
+    </div>
+
+    <div>
+      <label>Description</label>
+      <textarea
+        type="text"
+        id="description"
+        [(ngModel)]="post.description"
+        placeholder="description"
+        name="description"
+        #name="ngModel"
+        class="form-control mb-3"
+      >
+      </textarea>
+    </div>
+    <div>
+      <label>Date</label>
+      <input
+        type="text"
+        id="date"
+        [(ngModel)]="post.date"
+        placeholder="date"
+        name="date"
+        #name="ngModel"
+        class="form-control mb-3"
+      />
+    </div>
+
+    <div class="form-goup">
+      <label for="AddLabel">Add Label</label>
+      <select
+        class="form-control"
+        id="label"
+        [(ngModel)]="post.label"
+        name="label"
+        #label="ngModel"
+      >
+        <option *ngFor="let label of labels" [value]="label">
+          {{ label }}
+        </option>
+      </select>
+    </div>
+
+    <div class="d-flex flex-row justify-content-end">
+      <button type="submit" class="btn btn-sm btn-success m-1">Submit</button>
+    </div>
+  </form>
+</div>
